@@ -1,0 +1,10 @@
+<p>
+    {{notificationMessage}}
+  </p>
+<div class = 'app-container'>
+    <app-categories (categorySelected)="onCategorySelected($event.id)" (resetFilters)="onResetFilters()"></app-categories>
+    <ul>
+        <app-announcement *ngFor="let announcement of filteredAnnouncements" [announcement]="announcement"></app-announcement>
+    </ul>
+    <button mat-raised-button color="primary" [routerLink]="'/add/new'">Create New Post</button>
+</div>
